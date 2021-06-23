@@ -1,0 +1,45 @@
+# install.packages("ISLR")
+library(ISLR)
+data(Smarket)
+glm.fit = glm(Direction ~ Lag1 + Lag2+ Lag3 + Lag4 + Lag5 + Volume , family = "binomial", data = Smarket)
+contrasts(Smarket$Direction)
+```
+
+(b) 문턱값(threshold)를 0.5 로 하여 혼동행렬(confusion matrix)를 구하시오.
+```{r}
+glm.probs = predict(glm.fit, type ="response")
+glm.pred = rep("Down", nrow(Smarket))
+threshold = 0.5
+glm.pred[glm.probs > threshold] = "Up"
+t(table(glm.pred, Smarket$Direction))
+```
+
+(c) ROC 곡선(curve)을 그리시오. (문턱값은 seq(0, 1, length.out = 1000) 으로부터 생성하라.)
+```{r}
+
+threshold = seq(0, 1, length.out = 1000)
+TPR_v = rep(NA, 1000)
+FPR_v = rep(NA, 1000)
+
+for (i in 1 : length(threshold))
+{
+   glm.pred = rep("Down", nrow(Smarket))
+   glm.pred[glm.probs > threshold[i]] = "Up"
+   glm.pred = factor(glm.pred, levels = c("Down", "Up"))
+   table = t(table(glm.pred, Smarket$Direction))
+   TPR_v[i] = table[2, 2] / sum(Smarket$Direction == "Up")
+   FPR_v[i] = table[1, 2] / sum(Smarket$Direction == "Down")
+}
+
+par(mfrow = c(1,1))
+plot(NA, xlim = c(0, 1), ylim = c(0, 1),
+     xlab = "False positive rate",
+     ylab = "True positive rate", main = "ROC curve")
+
+x.grid = sort(FPR_v)
+y.grid = sort(TPR_v)
+
+lines(x = x.grid, y = y.grid, col = "red", type = "s")
+
+abline(a = 0, b = 1, col = "blue")
+```
