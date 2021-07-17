@@ -3,19 +3,17 @@ library(ISLR)
 data(Smarket)
 glm.fit = glm(Direction ~ Lag1 + Lag2+ Lag3 + Lag4 + Lag5 + Volume , family = "binomial", data = Smarket)
 contrasts(Smarket$Direction)
-```
 
-(b) 문턱값(threshold)를 0.5 로 하여 혼동행렬(confusion matrix)를 구하시오.
-```{r}
+# 문턱값(threshold)를 0.5 로 하여 혼동행렬(confusion matrix)를 구하시오.
+
 glm.probs = predict(glm.fit, type ="response")
 glm.pred = rep("Down", nrow(Smarket))
 threshold = 0.5
 glm.pred[glm.probs > threshold] = "Up"
 t(table(glm.pred, Smarket$Direction))
-```
 
-(c) ROC 곡선(curve)을 그리시오. (문턱값은 seq(0, 1, length.out = 1000) 으로부터 생성하라.)
-```{r}
+
+# ROC 곡선(curve)을 그리시오. (문턱값은 seq(0, 1, length.out = 1000) 으로부터 생성하라.)
 
 threshold = seq(0, 1, length.out = 1000)
 TPR_v = rep(NA, 1000)
@@ -42,4 +40,3 @@ y.grid = sort(TPR_v)
 lines(x = x.grid, y = y.grid, col = "red", type = "s")
 
 abline(a = 0, b = 1, col = "blue")
-```
