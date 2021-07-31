@@ -40,7 +40,7 @@ for(i in 1:iter)
 hist(result, probability = TRUE, xlab = "p-value", main = "Histogram of p-value")
 ```
 
-![](distribution_p_value_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![Histogram](/distribution_p_value_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 # Komogorov-Smirnov test
 
