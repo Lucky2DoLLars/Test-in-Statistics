@@ -38,6 +38,7 @@ for(i in 1:iter)
 }
 
 hist(result, probability = TRUE, xlab = "p-value", main = "Histogram of p-value")
+```
 
 ![Histogram](C:/Users/User/Desktop/github코드/distribution_p_value_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
