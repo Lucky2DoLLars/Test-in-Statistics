@@ -56,4 +56,4 @@ for(sd in c(0.01, 0.5, 1.3))
 }
 ```
 
-![](RSS-contour-with-multicolinearity_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](/unnamed-chunk-2-1.png)<!-- -->
