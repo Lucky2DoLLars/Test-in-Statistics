@@ -9,7 +9,7 @@ it is known that the computation of regression coefficients is unstable.
 We plot the contours of RSS for different degree of multicollinearity to
 see its effect.
 
-# RSS function
+## RSS function
 
 ``` r
 rm(list = ls())
@@ -22,7 +22,7 @@ RSS = function(beta1, beta2)
 }
 ```
 
-# contours of RSS
+## contours of RSS
 
 We generate 3 different synthetic data set having different degree of
 correlation between variables, then plot the contours of RSS for each.
@@ -56,4 +56,4 @@ for(sd in c(0.01, 0.5, 1.3))
 }
 ```
 
-![](/contours_RSS.png)<!-- -->
+![](/image/multicollinearity_contours.pdf)<!-- -->
