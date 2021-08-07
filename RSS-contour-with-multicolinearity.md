@@ -56,4 +56,4 @@ for(sd in c(0.01, 0.5, 1.3))
 }
 ```
 
-![](/image/multicollinearity_contours.pdf)<!-- -->
+![](/image/multicollinearity_contours.png)<!-- -->
