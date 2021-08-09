@@ -70,4 +70,4 @@ lines(x = x.grid, y = y.grid, col = "red", type = "s")
 abline(a = 0, b = 1, col = "blue")
 ```
 
-![](ROC-curve_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](/image/ROC_curve.png)<!-- -->
