@@ -70,4 +70,4 @@ lines(x = x.grid, y = y.grid, col = "red", type = "s")
 abline(a = 0, b = 1, col = "blue")
 ```
 
-![](/image/ROC_curve.png)<!-- -->
+![](/image/roc_curve.png)<!-- -->
