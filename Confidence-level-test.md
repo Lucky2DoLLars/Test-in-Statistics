@@ -86,4 +86,4 @@ plotmeans(x ~ interval,
 abline(h = mu, col = "green", lwd = 3, lty = 2)
 ```
 
-![](Confidence-level-test_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](image/multiple_c.i.png)<!-- -->
