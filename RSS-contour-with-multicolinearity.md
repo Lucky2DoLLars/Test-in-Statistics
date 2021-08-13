@@ -22,7 +22,7 @@ RSS = function(beta1, beta2)
 }
 ```
 
-## contours of RSS
+## Contours of RSS
 
 We generate 3 different synthetic data set having different degree of
 correlation between variables, then plot the contours of RSS for each.
@@ -56,4 +56,4 @@ for(sd in c(0.01, 0.5, 1.3))
 }
 ```
 
-![](/image/multicollinearity_contours.png)<!-- -->
+![](/image/RSS_contour_multicollinearity.png)<!-- -->
