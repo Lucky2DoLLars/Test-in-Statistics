@@ -8,7 +8,7 @@ use significance level to set criteria for statistical hypothesis
 testing. In this file, we understand empirically the meaning of
 significance level via simulation for simple T-test.
 
-# setup
+# Setup
 
 We iterate generating sample 10^5 times. A significance level is set by
 0.05
@@ -22,7 +22,7 @@ alpha = 0.05
 t_value = qt(1 - alpha, df = n - 1)
 ```
 
-# result
+# Result
 
 For each generated sample, we check that sample is in rejection area. As
 a result, we find that the ratio of rejection is the almost same as
